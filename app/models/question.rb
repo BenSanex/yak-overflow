@@ -3,4 +3,9 @@ class Question < ActiveRecord::Base
   has_many :comments, as: :commentable
   has_many :answers
   has_many :votes, as: :votable
+
+def count_answers
+  self.answers.count
+end
+
 end

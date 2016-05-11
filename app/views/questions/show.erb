@@ -4,6 +4,11 @@
 <p>
   <%= @question.body %>
 </p>
+<div class='vote_buttons'>
+  <a href="/question/<%=@question.id%>/upvote">UP</a>
+  <%= @question.vote_count %>
+  <a href="/question/<%=@question.id%>/downvote">DOWN</a>
+</div>
 
 <div id="author">
   <%= @question.asker.username %>
@@ -17,7 +22,14 @@
 <div class="answer-container">
 <h2> <%= @question.count_answers %> Y'answers </h2>
 
- <% @question.answers.each do |answer| %>
+  <% @question.answers.each do |answer| %>
+
+  <div class="vote_buttons">
+    <a href="/answer/<%=answer.id%>/upvote">UP</a>
+    <$= answer.vote_count %>
+    <a href="/answer/<%=answer.id%>/downvote">DOWN</a>
+  </div>
+
     <%= answer.body %>
     <%= answer.author.username %>
     <!-- erb :_vote vote partial here-->

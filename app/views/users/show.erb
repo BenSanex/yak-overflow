@@ -1,0 +1,19 @@
+<h1><%= @user.username %></h1>
+<% if @questions.length > 0 %>
+  <p>Questions asked:</p>
+  <% @questions.each do |q| %>
+  <%= erb :"partials/_show_question", locals: {question: q} %>
+  <% end %>
+<% else %>
+  <p> Get yakin </p>
+<% end %>
+
+<% if @answers.length > 0 %>
+ <p>Questions answered:</p>
+  <% @answers.each do |a| %>
+  <%= erb :"partials/_show_answer", locals: {answer: a} %>
+  <% end %>
+<% else %>
+
+<% end %>
+

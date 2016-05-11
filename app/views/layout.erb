@@ -20,6 +20,7 @@
 <body>
   <% if session[:user_id] %>
   <a href="/">Home</a>
+  <a href="/users/<%= @user.id %>"><%= @user.username %></a>
   <a href="/logout">Logout</a>
   <a href="/questions/new">(y)Ask a Question</a>
   <% else %>

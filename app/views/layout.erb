@@ -19,7 +19,9 @@
 </head>
 <body>
   <% if session[:user_id] %>
+  <a href="/">Home</a>
   <a href="/logout">Logout</a>
+  <a href="/questions/new">(y)Ask a Question</a>
   <% else %>
   <a href="/login">Login</a>
   <a href="/users/new">Sign Up</a>

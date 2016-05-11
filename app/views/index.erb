@@ -3,5 +3,5 @@
 <% end %>
 
 <% @questions.each do |q| %>
-<%= erb :"partials/_show_question", locals: {question: q} %>
+<%= erb :"questions/_show_question", locals: {question: q} %>
 <% end %>

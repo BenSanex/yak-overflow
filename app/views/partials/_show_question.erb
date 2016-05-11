@@ -1,0 +1,11 @@
+<div>
+
+  <a href=<%="/questions/#{question.id}"%> >
+    <%= question.answers.count %>
+    <%= question.votes.count %>
+    <%= question.title %>
+  </a>
+  <a href=<%="/users/#{question.asker_id}"%> > <%= question.asker_id %>
+  </a>
+
+</div>

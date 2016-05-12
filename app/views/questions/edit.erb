@@ -1,0 +1,11 @@
+<br>
+<br>
+<br>
+<form action="/questions/<%= @question.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input size="50" name="question[title]" type="text" value="<%= @question.title%>">
+  <br>
+  <input size="50" name="question[body]" type="text" value="<%=@question.body%>">
+  <br>
+  <input type="submit" value="y'ask away!">
+</form>

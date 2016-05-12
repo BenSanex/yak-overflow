@@ -4,6 +4,5 @@
   <a href="/questions/<%= question.id %>">
     <%= question.title %>
   </a>
-  <a href=<%="/users/#{question.asker_id}"%> > <%= question.asker_id %>
-  </a>
+  <a href=<%="/users/#{question.asker_id}"%> > </a><%= question.asker.username %>
 </div>

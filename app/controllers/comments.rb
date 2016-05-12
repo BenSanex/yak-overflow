@@ -20,6 +20,10 @@ end
 
 post '/question/:id/comment' do
   authenticate!
-  Comment.create(commentable_id: params[:id], commentable_type: :Question, commenter_id: session[:user_id], text: params[:text])
-  redirect "/questions/#{params[:id]}"
+  @comment = Comment.create(commentable_id: params[:id], commentable_type: :Question, commenter_id: session[:user_id], text: params[:text])
+  if request.xhr?
+    erb :'/partials/_comment', locals: {comment: @comment}, layout: false
+  else
+    redirect "/questions/#{params[:id]}"
+  end
 end

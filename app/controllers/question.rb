@@ -1,5 +1,5 @@
 get '/questions' do
- erb :index
+ erb :'questions/show'
 end
 
 get '/questions/new' do

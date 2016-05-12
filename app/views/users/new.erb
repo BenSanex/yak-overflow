@@ -1,7 +1,24 @@
-<form method="post" action="/users">
-  <input name="user[username]" type="text" placeholder="Username">
-  <input name="user[hashed_password]" type="text" placeholder="Password">
-  <input name="user[email]" type="text" placeholder="Email">
-  <input name="user[profile_pic]" type="text" placeholder="Picture URL">
-  <input type="submit" value="Register">
-</form>
+
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>yakOverflow</title>
+
+    <link href="/css/login.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+  </head>
+  <body>
+    <div class="container">
+
+
+<form class="form-signin" method="post" action="/users">
+  <h2 class="form-signin-heading">Sign Up</h2>
+  <input name="user[username]" type="username" placeholder="Username" class="form-control">
+  <input name="user[hashed_password]" type="text" placeholder="Password" class="form-control">
+  <input name="user[email]" type="password" placeholder="Email" class="form-control">
+  <input name="user[profile_pic]" type="email" placeholder="Picture URL" class="form-control"><br>
+  <input type="submit" value="Submit" class="button" >
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,4 +1,3 @@
 get '/' do
-  @questions = Question.all
-  erb :index
+  erb :index, layout: false
 end

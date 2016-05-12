@@ -431,6 +431,15 @@ th {
   margin-top: 0;
 }
 
+.meme {
+    position: absolute;
+    top: 80px;
+    right: 80px;
+    max-width: 500px;
+    max-height: 500px;
+}
+
+
 ul {
 list-style: none;
 }
@@ -458,7 +467,6 @@ a {
 a:hover{
   color:#2D9DFF;
 }
-
 
 .button {
   max-width: 330px;

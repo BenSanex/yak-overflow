@@ -1,5 +1,6 @@
 get '/questions' do
- erb :'questions/show'
+  @questions = Question.all
+  erb :'questions/index'
 end
 
 get '/questions/new' do

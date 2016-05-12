@@ -16,16 +16,16 @@
   <div class="nav">
     <ul>
       <% if session[:user_id] %>
-      <li><a href="/">home</a></li>
-      <li><a href="/users/<%= current_user.id %>"><%= current_user.username %></a></li>
+      <li><a href="/questions">home</a>
+      <li><a href="/users/<%= session[:user_id] %>">Profile</a></li>
       <li><a href="/logout">logout</a></li>
       <li><a href="/questions/new">y'ask a question</a></li>
-      <li><a href="/questions/show">home</a>
-        <% else %>
+
+      <% else %>
+        <li><a href="/questions">home</a>
         <li><a href="/login">login</a></li>
         <li><a href="/users/new">sign up</a></li>
-        <li><a href="/questions/show">home</a>
-          <% end %>
+      <% end %>
         </div>
         <%= yield %>
       </body>

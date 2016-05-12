@@ -1,12 +1,25 @@
-get 'comments/new' do
+get '/answer/:id/comment/new' do
   authenticate!
-
-  erb :"comments/new"
+  @type = 'answer'
+  @id = params[:id]
+  erb :'comments/new'
 end
 
-
-post 'comments' do
+post '/answer/:id/comment' do
   authenticate!
+  Comment.create(commentable_id: params[:id], commentable_type: :Answer, commenter_id: session[:user_id], text: params[:text])
+  redirect "/questions/#{params[:id]}"
+end
 
-  redirect "/questions/:id"
+get '/question/:id/comment/new' do
+  authenticate!
+  @type = 'question'
+  @id = params[:id]
+  erb :'comments/new'
+end
+
+post '/question/:id/comment' do
+  authenticate!
+  Comment.create(commentable_id: params[:id], commentable_type: :Question, commenter_id: session[:user_id], text: params[:text])
+  redirect "/questions/#{params[:id]}"
 end

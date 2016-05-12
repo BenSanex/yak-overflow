@@ -12,4 +12,7 @@ class Question < ActiveRecord::Base
     self.votes.where(direction: :up).count - self.votes.where(direction: :down).count
   end
 
+  def path
+    "/question/<%=@question.id%>/comment/new"
+  end
 end

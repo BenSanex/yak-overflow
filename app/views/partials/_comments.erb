@@ -1,0 +1,6 @@
+<div class="comments">
+  <% commentable.comments.each do |comment| %>
+  <%= erb :'partials/_comment', locals: {comment: comment} %>
+  <% end %>
+  <a href = "<%=commentable.path%>">Add <%= commentable.class.name %></a>
+</div>

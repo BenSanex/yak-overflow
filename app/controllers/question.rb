@@ -21,3 +21,22 @@ get '/questions/:id' do
   @question = Question.find(params[:id])
   erb :'questions/show'
 end
+
+get '/questions/:id/edit' do
+  @question = Question.find(params[:id])
+  erb :'questions/edit'
+end
+
+put '/questions/:id' do
+  @question = Question.update(params[:id], params[:question])
+  @question.save
+  redirect "/questions/#{@question.id}"
+end
+
+delete '/questions/:id' do
+  @question = Question.find(params[:id])
+  @question.destroy
+  redirect '/questions'
+end
+
+

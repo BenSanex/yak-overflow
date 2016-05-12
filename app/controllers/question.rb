@@ -1,5 +1,8 @@
-get '/questions' do
-  @questions = Question.all
+get '/questions?' do
+  @questions = Question.where("title LIKE ?", "%#{params[:search]}%")
+  if @questions.length == 0
+    @questions = Question.all
+  end
   erb :'questions/index'
 end
 

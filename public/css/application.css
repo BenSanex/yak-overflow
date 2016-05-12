@@ -87,3 +87,11 @@ a:hover{
     opacity: 100%;
     color: white;
 }
+
+#search {
+  float: right;
+  margin-right: 300px;
+  margin-top: -34px;
+  background-color: black;
+  padding: 1%;
+}

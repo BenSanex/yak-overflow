@@ -8,6 +8,7 @@
   top: 40%;
   left:19.6%;
   right:19.6%;
+  text-align: center;
 }
 
 body {
@@ -16,7 +17,6 @@ background: url(/img/beautiful_yak.jpg) no-repeat center center;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  opacity: 0.9;
 }
 
 a {

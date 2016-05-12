@@ -32,10 +32,6 @@ http://s.quickmeme.com/img/91/9171e3b72d7c8c91cd39b208a57bc037afc65e22498ca05a8b
 http://troll.me/images/customer-service-croc/yakyakyakyak-thumb.jpg
 
 https://d.gr-assets.com/books/1387707184l/1032554.jpg
-
-https://cdn.meme.am/instances/500x/68370423.jpg
-
-https://cdn.meme.am/instances/500x/68370522.jpg
  ).sample
 end
 

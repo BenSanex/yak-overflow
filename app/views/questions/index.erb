@@ -1,12 +1,10 @@
   <link rel="stylesheet" href="/css/question_index.css">
 
 
+<img class="meme" src="<%= random_yak %>" />
 
 <% @questions.each do |q| %>
   <%= erb :"partials/_show_question", locals: {question: q} %>
 <% end %>
 
-
-
-<img class="meme" src="<%= random_yak %>" />
 

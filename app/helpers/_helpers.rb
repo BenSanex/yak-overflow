@@ -33,9 +33,10 @@ http://troll.me/images/customer-service-croc/yakyakyakyak-thumb.jpg
 
 https://d.gr-assets.com/books/1387707184l/1032554.jpg
 
-https://cdn.meme.am/instances/500x/68370423.jpg
+http://i.imgur.com/njQKiiB.jpg
 
-https://cdn.meme.am/instances/500x/68370522.jpg
+http://i.imgur.com/0wkxUJ8.jpg
+
  ).sample
 end
 

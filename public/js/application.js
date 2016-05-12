@@ -1,70 +1,67 @@
 $(document).ready(function() {
-  $("#question-comment").hide();
-  // upvote
 
+  // hide some stuff by default
+  $("#question-comment").hide();
+  $("#search").hide();
+  
+  // splash fade out and reroute to questions
   $("#logo").on("click", function(event){
     event.preventDefault()
     $(this).fadeOut("slow", function(){
-      window.location.href = "/login"
+      window.location.href = "/questions"
     });
   });
 
+  // upvote on questions
   $(".upvote").on("submit", function(event){
     event.preventDefault();
     var data = $(".total").text();
     $(".total").text(parseInt(data) + 1);
     var action = $(this).attr("action");
-
     $.ajax({
       method: "post",
       url: action
     });
   });
 
-  // downvote
+  // downvote on questions
   $(".downvote").on("submit", function(event){
     event.preventDefault();
     var data = $(".total").text();
-    // html visual
     $(".total").text(parseInt(data) - 1);
     var action = $(this).attr("action");
-
     $.ajax({
       method: "post",
       url: action
     });
   });
 
-    // upvote
+  // upvote on answers
   $(".aupvote").on("submit", function(event){
     event.preventDefault();
     var data = $(this).parent().find(".atotal");
-    // html visual
     data.text(parseInt(data.text()) + 1);
-
     var action = $(this).attr("action");
-
     $.ajax({
       method: "post",
       url: action
     });
   });
 
-  // downvote
+  // downvote on answers
   $(".adownvote").on("submit", function(event){
     event.preventDefault();
     var data = $(this).parent().find(".atotal");
-    // html visual
     data.text(parseInt(data.text()) - 1);
     var action = $(this).attr("action");
-
     $.ajax({
       method: "post",
       url: action
     });
   });
 
-   $(".q-comment").on("click", function(event){
+  // comment show/hide for questions
+  $(".q-comment").on("click", function(event){
     event.preventDefault();
     $(this).hide(function(){
       $("#question-comment").show().on("submit", function(event){
@@ -84,7 +81,11 @@ $(document).ready(function() {
         });
       });
     });
-
   });
+
+  // search bar pop up
+  $("#search-text").on("click", function(){
+    $("#search").slideDown("fast");
+  }); 
 
 });

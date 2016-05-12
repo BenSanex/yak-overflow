@@ -16,17 +16,23 @@
   <div class="nav">
     <ul>
       <% if session[:user_id] %>
-      <li><a href="/questions">home</a>
-      <li><a href="/users/<%= session[:user_id] %>">profile</a></li>
-      <li><a href="/logout">logout</a></li>
-      <li><a href="/questions/new">y'ask a question</a></li>
-
+        <li><a href="/questions">home</a>
+        <li><a href="/users/<%= session[:user_id] %>">profile</a></li>
+        <li><a href="/logout">logout</a></li>
+        <li><a href="/questions/new">y'ask a question</a></li>
       <% else %>
         <li><a href="/questions">home</a>
         <li><a href="/login">login</a></li>
         <li><a href="/users/new">sign up</a></li>
       <% end %>
-        </div>
-        <%= yield %>
-      </body>
-      </html>
+      <li>
+          <form method="get" action="/questions">
+            <input type="text" name="search" placeholder="Search">
+            <input type="submit" value="Search">
+          </form>
+      </li>
+    </ul>
+  </div>
+  <%= yield %>
+</body>
+</html>

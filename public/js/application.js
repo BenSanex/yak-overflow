@@ -26,16 +26,16 @@ $(document).ready(function() {
     });
   });
 
-  $(".yak_it_up").on("submit", function(event){
-    event.preventDefault();
+  // $(".yak_it_up").on("submit", function(event){
+  //   event.preventDefault();
 
-    var request = $.ajax({
-      url: '/answer',
-      type: 'post'
-    });
-    request.done(function(response) {
-      console.log(response)
+  //   var request = $.ajax({
+  //     url: '/answer',
+  //     type: 'post'
+  //   });
+  //   request.done(function(response) {
+  //     console.log(response)
 
-  });
-  });
+  // });
+  // });
 });

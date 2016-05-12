@@ -488,3 +488,7 @@ a:hover{
     opacity: 100%;
     color: white;
 }
+
+#search {
+  float: right;
+}

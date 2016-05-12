@@ -458,3 +458,25 @@ a {
 a:hover{
   color:#2D9DFF;
 }
+
+
+.button {
+  max-width: 330px;
+  margin: 0 auto;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  opacity: 0.5;
+  font-family: 'Montserrat', sans-serif;
+  color:white;
+  width: 75%;
+  -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: #2D9DFF;
+    opacity: 100%;
+    color: white;
+}

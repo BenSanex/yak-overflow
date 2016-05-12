@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="utf-8">
+  <meta charset="utf-8">
   <link rel="stylesheet" href="/css/normalize.css">
 
   <link rel="stylesheet" href="/css/application.css">
@@ -15,18 +15,18 @@
 <body>
   <div class="nav">
     <ul>
-  <% if session[:user_id] %>
-  <li><a href="/">home</a></li>
-  <li><a href="/users/<%= @user.id %>"><%= @user.username %></a></li>
-  <li><a href="/logout">logout</a></li>
-  <li><a href="/questions/new">y'ask a question</a></li>
-   <li><a href="/questions/show">home</a>
-  <% else %>
-  <li><a href="/login">login</a></li>
-  <li><a href="/users/new">sign up</a></li>
-  <li><a href="/questions/show">home</a>
-  <% end %>
-</div>
-  <%= yield %>
-</body>
-</html>
+      <% if session[:user_id] %>
+      <li><a href="/questions">home</a>
+      <li><a href="/users/<%= session[:user_id] %>">Profile</a></li>
+      <li><a href="/logout">logout</a></li>
+      <li><a href="/questions/new">y'ask a question</a></li>
+
+      <% else %>
+        <li><a href="/questions">home</a>
+        <li><a href="/login">login</a></li>
+        <li><a href="/users/new">sign up</a></li>
+      <% end %>
+        </div>
+        <%= yield %>
+      </body>
+      </html>

@@ -11,7 +11,7 @@
     <%= @question.body %>
   </p>
   <div id="author">
-    Written by: <%= @question.asker.username %>
+    <%= @question.asker.username %>
   </div>
 
   <div class='vote_buttons'>
@@ -28,9 +28,10 @@
     <% @question.comments.each do |comment| %>
     <%= erb :'partials/_comment', locals: {comment: comment} %>
     <% end %>
+    </div>
     <a href = "/question/<%=@question.id%>/comment/new">Add Comment</a>
     <p>-----------------------------------------</p>
-  </div>
+
 </div>
 
 <div class="answer-container">

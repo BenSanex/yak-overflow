@@ -2,25 +2,27 @@
 .question-container {
   background-color:#ccc;
   position:relative;
-  margin: auto;
+  margin: 3% auto;
   width: 75%;
   padding:3%;
 }
 
 
 .answer-container{
-  margin-left: 15%;
+   background-color:#E8E8E8;
+  position:relative;
+  margin: 0 auto 3% auto;
+  width: 75%;
+  padding: 3%;
+
 }
 
 h1 {
   font-family:'Montserrat', sans-serif;
 }
 
-/*.comments {
-  background-color: gray;
-   opacity: 0.5;
-   width: 35%;
-  padding:1%;
+#comment-render {
+  font-size: 8px;
    text-align: center;
    margin: 10px;
    font-color: black;
@@ -29,6 +31,69 @@ h1 {
 #author {
   font-size: 12px;
   position:relative;
-  bottom: 0;
+  bottom:0;
+  clear:both;
+  text-align: right;
+  color: #2D9DFF;
+}
 
-}*/
+.vote_buttons {
+  float: left;
+  display:inline-block;
+}
+
+
+.total {
+  padding-left:10px;
+  margin:0;
+  font-family:'Montserrat', sans-serif;
+}
+
+.content {
+  float:left;
+  display:inline-block;
+  margin-left: 55px;
+  font-size:1.5em;
+}
+
+.q-comment {
+  font-size: 16px;
+  position:relative;
+  bottom:0;
+  float: right;
+}
+
+.each-comment{
+  border-top: 1px solid black;
+  max-width: 50%;
+  width:40%;
+  bottom:0;
+  padding:  .25% .5% 0 .5%;
+  font-size: 12px;
+}
+
+#commenter-id{
+  text-align: right;
+  color:#2D9DFF;
+}
+
+#comment-form{
+  width:330px;
+   -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+
+}
+
+h2, h3 {
+  font-family:'Montserrat', sans-serif;
+}
+
+#answer-text {
+  font-family:'Montserrat', sans-serif;
+  font-size: 1em;
+  display:inline-block;
+  float: left;
+  margin-left: 35px;
+  padding:15px;
+}

@@ -1,5 +1,6 @@
 h1 {
     font-family: 'Montserrat', sans-serif;
+    margin-left:50px;
 }
 
 #title{
@@ -23,6 +24,7 @@ width: 75%;
   margin-top: 10px;
   height :175px;
   min-width: 25%;
+  width:35%;
 }
 
 #question {

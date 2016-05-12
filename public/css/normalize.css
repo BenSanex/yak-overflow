@@ -477,14 +477,18 @@ a:hover{
   border-radius: 4px;
   opacity: 0.5;
   font-family: 'Montserrat', sans-serif;
-  color:white;
+  color:#2D9DFF;
   width: 75%;
   -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
 
 .button:hover {
-    background-color: #2D9DFF;
-    opacity: 100%;
+    background-color:#2D9DFF ;
+    opacity: 1;
     color: white;
+}
+
+#search {
+  float: right;
 }

@@ -1,69 +1,55 @@
-  <link rel="stylesheet" href="/css/ind_questions.css">
-<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-
-<div class="question-container">
-  <div class='question-author'
-  <h1><%= @question.title%></h1>
-  <% if @question.asker_id == session[:user_id] %>
-  <a href="/questions/<%= @question.id %>/edit">edit</a>
-  <% end %>
-  <p>
-    <%= @question.body %>
-  </p>
-  <div id="author">
-    Written by: <%= @question.asker.username %>
-  </div>
-
-  <div class='vote_buttons'>
-    <form action="/questions/<%=@question.id%>/upvote" method="post" class="upvote">
-      <button class='carrot' type="submit" value="Upyak"><img src='/img/up_carrot.png'></button>
-    </form>
-    <p class="total"><%= @question.vote_count %></p>
-    <form action="/questions/<%=@question.id%>/downvote" method="post" class="downvote">
-      <button class='carrot' type="submit" value="Downyak"><img src='/img/down_carrot.png'></button>
-    </form>
+<div class='question-container'>
+  <div class='question-author'>
+    <h1><%= @question.title %></h1>
+    <div class='vote_buttons'>
+      <form action="/questions/<%= @question.id %>/upvote" method="post" class="upvote">
+        <button class='carrot' type="submit" value="Upyak"><img src='/img/up_carrot.png'></button>
+      </form>
+      <p class="total"><%= @question.vote_count %></p>
+      <form action="/questions/<%= @question.id %>/downvote" method="post" class="downvote">
+        <button class='carrot' type="submit" value="Downyak"><img src='/img/down_carrot.png'></button>
+      </form>
+    </div>
+    <% if @question.asker_id == session[:user_id] %>
+      <a href="/questions/<%= @question.id %>/edit">edit</a>
+    <% end %>
+    <p><%= @question.body %></p>
+    <div id="author"><%= @question.asker.username %></div>
   </div>
 
   <div class="comments">
     <div id="comment-render">
     <% @question.comments.each do |comment| %>
-    <%= erb :'partials/_comment', locals: {comment: comment} %>
+      <%= erb :'partials/_comment', locals: {comment: comment} %>
     <% end %>
     </div>
-
-    <a href = "/question/<%=@question.id%>/comment/new" class="q-comment">Add Comment</a>
+    <a href="/question/<%= @question.id %>/comment/new" class="q-comment">Add Comment</a>
     <div id="question-comment">
-      <form action=<%="/question/#{@question.id}/comment"%> method="post">
+      <form action="/question/<%= @question.id %>/comment" method="post">
         <input type="hidden" value="<%= @question.id %>" name="question_id">
         <textarea name="text"></textarea>
         <input type="submit" value="Yak it up">
       </form>
     </div>
-    <p>-----------------------------------------</p>
   </div>
 
-<div class="answer-container">
-  <h2> <%= @question.count_answers %> Y'answers </h2>
-
-  <% @question.answers.each do |a| %>
-
-  <%= erb :'partials/_show_answer', locals: {answer: a} %>
-
-  <div class="comments">
-    <% a.comments.each do |comment| %>
-    <%= erb :'partials/_comment', locals: {comment: comment} %>
+  <div class="answer-container">
+    <h2><%= @question.count_answers %> Y'answers</h2>
+    <% @question.answers.each do |a| %>
+      <%= erb :'partials/_show_answer', locals: {answer: a} %>
+    <div class="comments">
+      <% a.comments.each do |comment| %>
+        <%= erb :'partials/_comment', locals: {comment: comment} %>
+      <% end %>
+      <a href="/answer/<%= a.id %>/comment/new">Add Comment</a>
     <% end %>
-    <a href = "/answer/<%=a.id%>/comment/new">Add Comment</a>
-    <p>-----------------------------------------</p>
+    </div>
+    <h3>Spread some yak knowledge!</h3>
+    <form class="yak_it_up" action="/answer" method="post">
+      <input type="hidden" value="<%= @question.id %>" name="question_id">
+      <textarea name="body"></textarea>
+      <input type="submit" value="Yak it up">
+    </form>
   </div>
-  <% end %>
-
-
-  <h2> Your Answer </h2>
-  <form class="yak_it_up" action="/answer" method="post">
-    <input type="hidden" value="<%=@question.id%>" name="question_id">
-    <textarea name="body"></textarea>
-    <input type="submit" value="Yak it up">
-  </form>
 
 </div>

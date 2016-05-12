@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $("#question-comment").hide();
   // upvote
 
   $("#logo").on("click", function(event){
@@ -62,5 +63,29 @@ $(document).ready(function() {
       url: action
     });
   });
+
+   $(".q-comment").on("click", function(event){
+    event.preventDefault();
+    $(this).hide(function(){
+      $("#question-comment").show().on("submit", function(event){
+        event.preventDefault();
+        var form = $(this).children(":first");
+        var url = form.attr("action");
+        var data = form.serialize()
+        var partyTimes = $.ajax({
+          method: "post",
+          url: url,
+          data: data
+        });
+        partyTimes.done(function(response){
+          $("#comment-render").append(response);
+          $("#question-comment").hide();
+          $(".q-comment").show();
+        });
+      });
+    });
+
+  });
+
 
 });

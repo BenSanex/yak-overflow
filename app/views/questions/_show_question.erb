@@ -2,9 +2,9 @@
   <ul>
     <li class="info"><%= question.answers.count %></li>
     <li class="info"> <%= question.votes.count %></li>
-    <li class="title"><a href="/questions/<%= question.id %>">
+    <li> <div class="title"><a href="/questions/<%= question.id %>">
       <%= question.title %></a>
-    </li>
+    </div> </li>
   <br>
  <li> <div id="username"><a href=<%="/users/#{question.asker_id}"%> > <%= question.asker_id %>
   </a></li></div>

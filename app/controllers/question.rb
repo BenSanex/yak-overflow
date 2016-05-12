@@ -16,7 +16,7 @@ post '/questions' do
 end
 
 get '/questions/:id' do
-  @user = User.find(session[:user_id])
+  # @user = User.find(session[:user_id])
   @question = Question.find(params[:id])
   erb :'questions/show'
 end

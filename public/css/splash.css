@@ -1,0 +1,44 @@
+
+
+#logo  {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5em;
+  color: white;
+  position: fixed;
+  top: 40%;
+  left:19.6%;
+  right:19.6%;
+}
+
+body {
+background: url(/img/beautiful_yak.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 0.9;
+}
+
+a {
+  text-decoration: none;
+}
+
+span {
+font-family: 'Chewy', cursive;
+}
+
+@media screen and (max-width: 880px) {
+    h1 {
+      font-size: 1.5em; };
+    }
+
+@media screen and (max-width: 680px) {
+    h1 {
+      font-size: 1em; };
+    }
+
+@media screen and (max-width: 400px) {
+    h1 {
+      font-size: .75em;
+    };
+    }

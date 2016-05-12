@@ -1,7 +1,15 @@
-<% if session[:user_id] %>
-  <h1>Hello, <%= @user.username %></h1>
-<% end %>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat|PT+Sans+Caption|Chewy' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/splash.css">
+  <title>yakOverflow</title>
+</head>
 
-<% @questions.each do |q| %>
-<%= erb :"questions/_show_question", locals: {question: q} %>
-<% end %>
+<body>
+  <h1>
+    <a href="/show" id="logo"><span>yak</span>Overflow</a>
+  </h1>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+<% if session[:user_id] %>
+  <h1>Hello, <%= @user.username %></h1>
+<% end %>
+
+<% @questions.each do |q| %>
+<%= erb :"questions/_show_question", locals: {question: q} %>
+<% end %>

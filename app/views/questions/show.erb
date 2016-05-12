@@ -26,10 +26,19 @@
   </div>
 
   <div class="comments">
+    <div id="comment-render">
     <% @question.comments.each do |comment| %>
     <%= erb :'partials/_comment', locals: {comment: comment} %>
     <% end %>
-    <a href = "/question/<%=@question.id%>/comment/new">Add Comment</a>
+    </div>
+    <a href = "/question/<%=@question.id%>/comment/new" class="q-comment">Add Comment</a>
+    <div id="question-comment">
+      <form action=<%="/question/#{@question.id}/comment"%> method="post">
+        <input type="hidden" value="<%= @question.id %>" name="question_id">
+        <textarea name="text"></textarea>
+        <input type="submit" value="Yak it up">
+      </form>
+    </div>
     <p>-----------------------------------------</p>
   </div>
 </div>
@@ -38,7 +47,8 @@
   <h2> <%= @question.count_answers %> Y'answers </h2>
 
   <% @question.answers.each do |a| %>
-  <%= erb :'partials/_answer', locals: {answer: a} %>
+
+  <%= erb :'partials/_show_answer', locals: {answer: a} %>
 
   <div class="comments">
     <% a.comments.each do |comment| %>

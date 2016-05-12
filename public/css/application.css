@@ -1,3 +1,8 @@
+html {
+  max-width:1200px;
+  margin:auto;
+}
+
 .carrot img{
 	width:30px;
 	height:30px;
@@ -10,14 +15,6 @@
 	background:transparent;
 	padding:0px;
 	margin:0px;
-}
-
-.question_author {
-
-}
-
-.vote_buttons {
-
 }
 
 

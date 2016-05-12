@@ -2,7 +2,11 @@
 
 
 <img class="meme" src="<%= random_yak %>" />
-
+<div class = 'questions'>
+  <div class = 'headers' >
+  <h5>Answers</h5>
+  <h5>Votes</h5>
+</div>
 <% @questions.each do |q| %>
   <%= erb :"partials/_show_question", locals: {question: q} %>
 <% end %>

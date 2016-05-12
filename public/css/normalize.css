@@ -423,10 +423,13 @@ th {
 }
 
 .nav {
-  position:fixed;
+  position:relative;
   background-color: black;
-  top:0;
+  padding: .5%;
   width:100%;
+  height:2%;
+  margin-bottom: 4%
+
 }
 
 ul {
@@ -445,5 +448,14 @@ li {
   font-weight: bold;
   padding-right:2%;
   margin-right: 2%;
+}
 
+a {
+  color:#1572C5;
+  text-decoration: none;
+  font-family: helvetica;
+}
+
+a:hover{
+  color:#2D9DFF;
 }

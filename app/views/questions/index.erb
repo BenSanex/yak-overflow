@@ -1,3 +1,7 @@
+  <link rel="stylesheet" href="/css/question_index.css">
+
+
+
 <% @questions.each do |q| %>
   <%= erb :"questions/_show_question", locals: {question: q} %>
 <% end %>

@@ -4,7 +4,9 @@
 <div class="question-container">
 
   <h1><%= @question.title%></h1>
-
+  <% if @question.asker_id == session[:user_id] %>
+  <a href="/questions/<%= @question.id %>/edit">edit</a>
+  <% end %>
   <p>
     <%= @question.body %>
   </p>

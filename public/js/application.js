@@ -1,5 +1,13 @@
 $(document).ready(function() {
   // upvote
+
+  $("#logo").on("click", function(event){
+    event.preventDefault()
+    $(this).fadeOut("slow", function(){
+      window.location.href = "/login"
+    });
+  });
+
   $(".upvote").on("submit", function(event){
     event.preventDefault();
     var data = $(".total").text();
@@ -29,9 +37,9 @@ $(document).ready(function() {
     // upvote
   $(".aupvote").on("submit", function(event){
     event.preventDefault();
-    var data = $(this).parent().find(".atotal").text();
+    var data = $(this).parent().find(".atotal");
     // html visual
-    $(this).parent().find(".atotal").text(parseInt($(this).parent().find(".atotal").text()) + 1);
+    data.text(parseInt(data.text()) + 1);
 
     var action = $(this).attr("action");
 
@@ -44,9 +52,9 @@ $(document).ready(function() {
   // downvote
   $(".adownvote").on("submit", function(event){
     event.preventDefault();
-    var data = $(this).parent().find(".atotal").text();
+    var data = $(this).parent().find(".atotal");
     // html visual
-    $(this).parent().find(".atotal").text(parseInt($(this).parent().find(".atotal").text()) - 1);
+    data.text(parseInt(data.text()) - 1);
     var action = $(this).attr("action");
 
     $.ajax({

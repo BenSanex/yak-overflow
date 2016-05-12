@@ -5,9 +5,13 @@
   <%= @question.body %>
 </p>
 <div class='vote_buttons'>
-  <a href="/question/<%=@question.id%>/upvote">UP</a>
-  <%= @question.vote_count %>
-  <a href="/question/<%=@question.id%>/downvote">DOWN</a>
+  <form action="/questions/<%=@question.id%>/upvote" method="post" class="upvote">
+    <input type="submit" value="Upyak"></input>
+  </form>
+  <p class="total"><%= @question.vote_count %></p>
+  <form action="/questions/<%=@question.id%>/downvote" method="post" class="downvote">
+    <input type="submit" value="Downyak"></input>
+  </form>
 </div>
 
 <div id="author">

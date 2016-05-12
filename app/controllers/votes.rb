@@ -1,19 +1,27 @@
-get '/answer/:id/upvote' do
-  Vote.create(votable_id: params[:id], votable_type: :Answer, voter_id: session[:user_id], direction: :up)
-  redirect "/questions/#{params[:id]}"
-end
+# get '/answers/:id/upvote' do
+#   Vote.create(votable_id: params[:id], votable_type: :Answer, voter_id: session[:user_id], direction: :up)
+#   redirect "/questions/#{params[:id]}"
+# end
 
-get '/answer/:id/downvote' do
-  Vote.create(votable_id: params[:id], votable_type: :Answer, voter_id: session[:user_id], direction: :down)
-  redirect "/questions/#{params[:id]}"
-end
+# get '/answers/:id/downvote' do
+#   Vote.create(votable_id: params[:id], votable_type: :Answer, voter_id: session[:user_id], direction: :down)
+#   redirect "/questions/#{params[:id]}"
+# end
 
-get '/question/:id/upvote' do
+post '/questions/:id/upvote' do
   Vote.create(votable_id: params[:id], votable_type: :Question, voter_id: session[:user_id], direction: :up)
-  redirect "/questions/#{params[:id]}"
+  if request.xhr?
+    "this doesn't matter"
+  else
+    redirect "/questions/#{params[:id]}"
+  end
 end
 
-get '/question/:id/downvote' do
+post '/questions/:id/downvote' do
   Vote.create(votable_id: params[:id], votable_type: :Question, voter_id: session[:user_id], direction: :down)
-  redirect "/questions/#{params[:id]}"
+  if request.xhr?
+   "this doesn't matter"
+  else
+    redirect "/questions/#{params[:id]}"
+  end
 end

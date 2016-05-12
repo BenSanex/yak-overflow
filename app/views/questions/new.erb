@@ -1,5 +1,11 @@
-<form method="post" action="/questions">
-  <input name="question[title]" type="text" placeholder="Title">
-  <textarea name="question[body]" type="text" placeholder="Summary"></textarea>
-  <input type="submit" value="y'ask away!">
+ <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+ <h1>Got a yak question?</h1>
+
+ <link rel="stylesheet" href="/css/ask_question.css">
+
+<form id="question" method="post" action="/questions">
+  <input id="title" name="question[title]" type="text" placeholder="Title"><br>
+  <textarea id="summary" name="question[body]" type="text" placeholder="Summary"></textarea>
+  <input class="button" type="submit" value="y'ask away!">
 </form>

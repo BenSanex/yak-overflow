@@ -1,0 +1,5 @@
+  <form action=<%="/#{@type}/#{@id}/comment"%> method="post">
+    <input type="hidden" value="<%=@id%>" name=<%="#{@type}_id"%>>
+    <textarea name="text"></textarea>
+    <input type="submit" value="Yak it up">
+  </form>

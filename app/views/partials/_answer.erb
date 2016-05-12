@@ -1,0 +1,14 @@
+<div class="vote_buttons">
+  <form action="/answers/<%=answer.id%>/upvote" method="post" class="aupvote">
+    <input type="hidden" name="question_id" value="<%= @question.id %>"></input>
+    <input type="submit" value="Upyak"></input>
+  </form>
+  <p class="atotal"><%= answer.vote_count %></p>
+  <form action="/answers/<%=answer.id%>/downvote" method="post" class="adownvote">
+    <input type="hidden" name="question_id" value="<%= @question.id %>"></input>
+    <input type="submit" value="Downyak"></input>
+  </form>
+</div>
+
+<p><%= answer.body %></p>
+<p>Written By: <%= answer.author.username %></p>

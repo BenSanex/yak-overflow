@@ -10,6 +10,10 @@
   <p>
     <%= @question.body %>
   </p>
+  <div id="author">
+    Written by: <%= @question.asker.username %>
+  </div>
+
   <div class='vote_buttons'>
     <form action="/questions/<%=@question.id%>/upvote" method="post" class="upvote">
       <input type="submit" value="Upyak"></input>
@@ -20,36 +24,27 @@
     </form>
   </div>
 
-  <div id="author">
-    <%= @question.asker.username %>
-  </div>
-
   <div class="comments">
     <% @question.comments.each do |comment| %>
     <%= erb :'partials/_comment', locals: {comment: comment} %>
     <% end %>
     <a href = "/question/<%=@question.id%>/comment/new">Add Comment</a>
+    <p>-----------------------------------------</p>
   </div>
 </div>
 
 <div class="answer-container">
   <h2> <%= @question.count_answers %> Y'answers </h2>
 
-  <% @question.answers.each do |answer| %>
+  <% @question.answers.each do |a| %>
+  <%= erb :'partials/_answer', locals: {answer: a} %>
 
-  <div class="vote_buttons">
-    <a href="/answer/<%=answer.id%>/upvote">UP</a>
-    <%= answer.vote_count %>
-    <a href="/answer/<%=answer.id%>/downvote">DOWN</a>
-  </div>
-
-  <%= answer.body %>
-  <%= answer.author.username %>
   <div class="comments">
-    <% answer.comments.each do |comment| %>
+    <% a.comments.each do |comment| %>
     <%= erb :'partials/_comment', locals: {comment: comment} %>
     <% end %>
-    <a href = "/answer/<%=answer.id%>/comment/new">Add Comment</a>
+    <a href = "/answer/<%=a.id%>/comment/new">Add Comment</a>
+    <p>-----------------------------------------</p>
   </div>
   <% end %>
 

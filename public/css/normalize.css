@@ -421,3 +421,29 @@ td,
 th {
   padding: 0;
 }
+
+.nav {
+  position:fixed;
+  background-color: black;
+  top:0;
+  width:100%;
+}
+
+ul {
+list-style: none;
+}
+
+li {
+  display:inline;
+}
+
+.nav a {
+  color:white;
+  font-family: helvetica;
+  font-size: 1em;
+  text-decoration: none;
+  font-weight: bold;
+  padding-right:2%;
+  margin-right: 2%;
+
+}

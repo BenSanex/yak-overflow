@@ -1,42 +1,50 @@
 <div class="question-container">
-<h1><%= @question.title%></h1>
+  <h1><%= @question.title%></h1>
 
-<p>
-  <%= @question.body %>
-</p>
-<div class='vote_buttons'>
-  <a href="/question/<%=@question.id%>/upvote">UP</a>
-  <%= @question.vote_count %>
-  <a href="/question/<%=@question.id%>/downvote">DOWN</a>
-</div>
+  <p>
+    <%= @question.body %>
+  </p>
+  <div class='vote_buttons'>
+    <a href="/question/<%=@question.id%>/upvote">UP</a>
+    <%= @question.vote_count %>
+    <a href="/question/<%=@question.id%>/downvote">DOWN</a>
+  </div>
 
-<div id="author">
-  <%= @question.asker.username %>
-</div>
+  <div id="author">
+    <%= @question.asker.username %>
+  </div>
 
-<div class="comments">
-<a href = "/comments/new">Add Comment</a>
-</div>
+  <div class="comments">
+    <% @question.comments.each do |comment| %>
+    <%= erb :'partials/_comment', locals: {comment: comment} %>
+    <% end %>
+    <a href = "/question/<%=@question.id%>/comment/new">Add Comment</a>
+  </div>
 </div>
 
 <div class="answer-container">
-<h2> <%= @question.count_answers %> Y'answers </h2>
+  <h2> <%= @question.count_answers %> Y'answers </h2>
 
   <% @question.answers.each do |answer| %>
 
   <div class="vote_buttons">
     <a href="/answer/<%=answer.id%>/upvote">UP</a>
-    <$= answer.vote_count %>
+    <%= answer.vote_count %>
     <a href="/answer/<%=answer.id%>/downvote">DOWN</a>
   </div>
 
-    <%= answer.body %>
-    <%= answer.author.username %>
-    <!-- erb :_vote vote partial here-->
+  <%= answer.body %>
+  <%= answer.author.username %>
+  <div class="comments">
+    <% answer.comments.each do |comment| %>
+    <%= erb :'partials/_comment', locals: {comment: comment} %>
+    <% end %>
+    <a href = "/answer/<%=answer.id%>/comment/new">Add Comment</a>
+  </div>
   <% end %>
 
 
-<h2> Your Answer </h2>
+  <h2> Your Answer </h2>
   <form action="/answer" method="post">
     <input type="hidden" value="<%=@question.id%>" name="question_id">
     <textarea name="body"></textarea>

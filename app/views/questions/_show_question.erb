@@ -1,8 +1,13 @@
-<div>
-  <%= question.answers.count %>
-  <%= question.votes.count %>
-  <a href="/questions/<%= question.id %>">
-    <%= question.title %>
-  </a>
-  <a href=<%="/users/#{question.asker_id}"%> > </a><%= question.asker.username %>
+
+<div class = "questions">
+  <ul>
+    <li class="info"><%= question.answers.count %></li>
+    <li class="info"> <%= question.votes.count %></li>
+    <li class="title"><a href="/questions/<%= question.id %>">
+      <%= question.title %></a>
+    </li>
+  <br>
+ <li> <div id="username"><a href=<%="/users/#{question.asker_id}"%> > <%= question.asker_id %>
+  </a></li></div>
+  </ul>
 </div>

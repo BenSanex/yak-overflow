@@ -1,0 +1,13 @@
+
+.question-container {
+  background-color:#ccc;
+  position:relative;
+  margin: auto;
+width: 75%;
+padding:3%;}
+
+
+  .answer-container{
+    margin-left: 15%;
+
+  }

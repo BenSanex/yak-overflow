@@ -32,6 +32,11 @@ http://s.quickmeme.com/img/91/9171e3b72d7c8c91cd39b208a57bc037afc65e22498ca05a8b
 http://troll.me/images/customer-service-croc/yakyakyakyak-thumb.jpg
 
 https://d.gr-assets.com/books/1387707184l/1032554.jpg
+
+http://i.imgur.com/njQKiiB.jpg
+
+http://i.imgur.com/0wkxUJ8.jpg
+
  ).sample
 end
 

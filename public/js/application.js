@@ -1,7 +1,28 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  // upvote
+  $(".upvote").on("submit", function(event){
+    event.preventDefault();
+    var data = $(".total").text()
+    $(".total").text(parseInt(data) + 1);
+    var action = $(this).attr("action");
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+    $.ajax({
+      method: "post",
+      url: action
+    });
+  });
+
+  // downvote
+  $(".downvote").on("submit", function(event){
+    event.preventDefault();
+    var data = $(".total").text()
+    // html visual
+    $(".total").text(parseInt(data) - 1);
+    var action = $(this).attr("action");
+
+    $.ajax({
+      method: "post",
+      url: action
+    });
+  });
 });
